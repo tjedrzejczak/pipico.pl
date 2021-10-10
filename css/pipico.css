@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'PublicSansRegular';
+    src: url('../fonts/PublicSansRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'PublicSansRegular', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    background-color: #f8f8f8;
+}
+
+.top-image img {
+    height: 100%; 
+    width: 100%; 
+    object-fit: contain;
+}
+
+.brand-a {
+    color: #808080;
+}
+
+.brand-b {
+    color: #0000c1;
+}
