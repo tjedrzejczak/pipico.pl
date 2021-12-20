@@ -1,0 +1,17 @@
+---
+layout: base
+---
+
+<div>
+    <div class="posttitle p-4 pb-2 mb-4">
+        <div class="fs-2">{{page.title}}</div>
+        <div class="postsdate pt-4 fs-6 text-end">{{page.date | date: "%F"}}</div>
+    </div>
+    <div class="mx-2 m-xl-0">
+        <div class="col-xl-9 posttext">
+            {{content}}
+        </div>
+        <div class="col-xl-3">
+        </div>
+    </div>
+</div>
