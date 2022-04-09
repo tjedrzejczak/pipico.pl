@@ -25,3 +25,16 @@ body {
 .brand-b {
     color: #0000c1;
 }
+
+.posttitle {
+    background-color: #808080;
+    color: #fcfcfc;
+}
+
+.posttext img {
+    max-width: 100%;
+}
+
+h4 {
+    color: #0000c1;
+}
