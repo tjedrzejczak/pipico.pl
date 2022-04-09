@@ -38,3 +38,36 @@ body {
 h4 {
     color: #0000c1;
 }
+
+.highlighter-rouge {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border: 1px solid #b0b0b0;
+    background-color: #f0f0f0;
+    padding: 5px;
+}
+
+.highlighter-rouge pre {
+    margin-bottom: 0;
+}
+
+.language-c .k {
+    color: #850505;
+}
+.language-c .nc {
+    color: #050564;
+}
+.language-c .kt {
+    color: #0a5ada;
+}
+
+.language-console {
+    color: #fcfcfc;
+    background-color: #808080;
+}
+
+.language-plaintext.highlighter-rouge {
+    border: 0;
+    padding: 2px;
+    margin: 2px;
+}
