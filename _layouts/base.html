@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <title>Pi Pico</title>
+    <meta name="keywords" content="Raspberry Pi, Pico">
 
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/pipico.css?v=100" rel="stylesheet">
@@ -22,8 +23,13 @@
         {{ content }}
 
         <footer class="pt-2 my-2 text-muted border-top mx-2 m-xl-0">
-            Copyright &copy; 2021 - {{ 'now' | date: "%Y" }}
-            <a class="text-decoration-none" href="//pipico.pl"><span class="brand-a">://</span><span class="brand-b">pipico.pl</span></a>
+            <div>
+                Copyright &copy; 2021 - {{ 'now' | date: "%Y" }}
+                <a class="text-decoration-none" href="//pipico.pl">
+                    <span class="brand-a">://</span><span class="brand-b">pipico.pl</span>
+                </a>
+            </div>
+            <div>Nie używamy plików cookie.</div>
         </footer>
     </div>
 </body>

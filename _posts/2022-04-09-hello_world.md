@@ -3,6 +3,7 @@ layout: post
 title: "Hello, World! w języku C"
 date: 2022-04-09
 permalink: /2022/04/hello
+topimage: top-circ1.jpg
 ---
 
 #### Instalacja zestawu narzędzi z wykorzystaniem WSL
@@ -12,31 +13,37 @@ O tym jak zainstalować WSL [pisałem już wcześniej](https://blog.ypro.tech/20
 
 Po uruchomieniu instancji Linuxa przeznaczonej dla zestawu narzędzi do tworzenia programów dla Pico należy dokonać instalacji niezbędnych programów.
 Zaczynamy od aktualizacji środowiska:
+
 ```console
 sudo apt update
 sudo apt upgrade
 ```
+
 a następnie cały zestaw niezbędnych składników:
+
 ```console
-sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential  libstdc++-arm-none-eabi-newlib
+sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential libstdc++-arm-none-eabi-newlib
 ```
 
-Należy pobrać także zestaw SDK. Proponuję umieścić go w folderze ``/opt/pico-sdk``:
+Należy pobrać także zestaw SDK. Proponuję umieścić go w folderze `/opt/pico-sdk`:
+
 ```console
 sudo git clone https://github.com/raspberrypi/pico-sdk.git /opt/pico-sdk
 cd /opt/pico-sdk
 sudo git submodule update --init
 echo 'export PICO_SDK_PATH=/opt/pico-sdk' | sudo tee -a /etc/profile.d/pico-sdk.sh
 ```
+
 Aby zmiana w profilu zadziałała należy wylogować się i zalogować się ponownie.
 
 #### Pierwszy program
 
-Proponuję kod programów umieszczać w strukturze folderów widocznej zarówno z systemu Windows jak też z Linuxa uruchomionego pod WSL. Jeśli takim folderem będzie np.: ``D:\Projects\`` to będzie on widoczny także jako ``/mnt/d/Projects/``.
+Proponuję kod programów umieszczać w strukturze folderów widocznej zarówno z systemu Windows jak też z Linuxa uruchomionego pod WSL. Jeśli takim folderem będzie np.: `D:\Projects\` to będzie on widoczny także jako `/mnt/d/Projects/`.
 
 W wybranym folderze należy umieścić dwa pliki:
 
-``main.c``:
+`main.c`:
+
 ```c
 #include <stdio.h>
 #include "pico/stdlib.h"
@@ -76,7 +83,8 @@ int main() {
 }
 ```
 
-oraz ``CMakeLists.txt``:
+oraz `CMakeLists.txt`:
+
 ```c
 cmake_minimum_required(VERSION 3.13)
 
@@ -99,19 +107,24 @@ pico_enable_stdio_usb(${PROJECT_NAME} 1)
 pico_enable_stdio_uart(${PROJECT_NAME} 0)
 ```
 
-Kompilacja odbywa się w folderze ``build``. Przed pierwszą kompilacją należy będąc w folderze, w którym znajduje się ``main.c``, wykonać:
+Kompilacja odbywa się w folderze `build`. Przed pierwszą kompilacją należy w folderze, w którym znajduje się `main.c`, wykonać:
+
 ```console
-mkdir build && cd build 
+mkdir build && cd build
 cmake ..
 make -j$(nproc)
 ```
-Następne kompilacje wymagają ponownego wykonania w folderze ``build`` polecenia:
+
+Następne kompilacje wymagają ponownego wykonania w folderze `build` polecenia:
+
 ```console
 make -j$(nproc)
 ```
 
-Nazwa projektu znajduje się w pliku ``CmakeLists.txt`` w deklaracji ``project()`` np.:
+Nazwa projektu znajduje się w pliku `CmakeLists.txt` w deklaracji `project()` np.:
+
 ```c
 project(HelloWorld C CXX ASM)
 ```
-Zatem wynikiem kompilacji będzie m.in. plik ``HelloWorld.uf2``. Plik ten należy umieścić w pamięci Pico. Aby to było możliwe, należy połączyć Pico z komputerem przytrzymując wciśnięty przycisk BOOTSEL w chwili włączania zasilania Pico. Po tej czynności Pico będzie widoczne dla komputera jako pamięć masowa, do której należy wgrać wynikowy plik ``.uf2``. Wgranie pliku spowoduje restart Pico i uruchomienie wgranego programu.
+
+Wynikiem kompilacji będzie m.in. plik `HelloWorld.uf2`. Plik ten należy umieścić w pamięci Pico. Aby to było możliwe, należy połączyć Pico z komputerem przytrzymując wciśnięty przycisk BOOTSEL w chwili włączania zasilania Pico. Po tej czynności Pico będzie widoczne dla komputera jako pamięć masowa, do której należy wgrać wynikowy plik `.uf2`. Wgranie pliku spowoduje restart Pico i uruchomienie wgranego programu.
