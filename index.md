@@ -9,3 +9,5 @@ Mikrokontroler Raspberry Pi Pico to najmniejszy przedstawiciel rodziny Raspberry
 W przeciwieństwie do poprzednich urządzeń, [Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/) nie jest miniaturowym systemem komputerowym (SBC - Single-Board Computer), a jedynie mikrokontrolerem. Jego sercem jest procesor 2040, który został zaprojektowany przez fundację Raspberry właśnie dla Pico [czytaj dalej...](./2021/12/wstep)
 
 [Hello, World!](./2022/04/hello)
+
+[WSL i debugowanie z użyciem sondy picoprobe](./2023/04/wsl-dbg)
