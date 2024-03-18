@@ -13,8 +13,8 @@ body {
 }
 
 .top-image img {
-    height: 100%; 
-    width: 100%; 
+    height: 100%;
+    width: 100%;
     object-fit: contain;
 }
 
@@ -54,9 +54,11 @@ h4 {
 .language-c .k {
     color: #850505;
 }
+
 .language-c .nc {
     color: #050564;
 }
+
 .language-c .kt {
     color: #0a5ada;
 }
@@ -64,6 +66,10 @@ h4 {
 .language-console {
     color: #fcfcfc;
     background-color: #808080;
+}
+
+.language-console span {
+    text-wrap: wrap;
 }
 
 .language-plaintext.highlighter-rouge {

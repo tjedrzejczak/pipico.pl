@@ -11,3 +11,5 @@ W przeciwieństwie do poprzednich urządzeń, [Pico](https://www.raspberrypi.org
 [Hello, World!](./2022/04/hello)
 
 [WSL i debugowanie z użyciem sondy picoprobe](./2023/04/wsl-dbg)
+
+[Kompilacja OpenOCD w środowisku Windows i MSYS2](./2024/03/openocd)
