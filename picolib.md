@@ -23,6 +23,10 @@ git submodule update
 
 Kompilacji poszczególnych przykładów należy dokonywać z ich folderów.
 
+```console
+cd HelloWorld
+```
+
 Przed pierwszą kompilacją należy w folderze, w którym znajduje się `main.c` lub `main.cpp`, wykonać:
 
 ```console
@@ -38,4 +42,7 @@ make -j$(nproc)
 ```
 
 #### Przykłady
+
 [HelloWorld](../examples/HelloWorld) - najprostszy program
+
+[HelloPIO](../examples/HelloPIO) - prosta demonstracja pioasm
