@@ -46,3 +46,5 @@ make -j$(nproc)
 [HelloWorld](../examples/HelloWorld) - najprostszy program
 
 [HelloPIO](../examples/HelloPIO) - prosta demonstracja pioasm
+
+[I2C_HD44780_BMP280](../examples/I2C_HD44780_BMP280) - czujnik BMP280 i wyświetlacz HD44780 połączone do magistrali I2C
