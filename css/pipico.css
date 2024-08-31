@@ -55,12 +55,18 @@ h4 {
     color: #850505;
 }
 
-.language-c .nc {
+.language-c .n,
+.language-c .nc,
+.language-c .nf {
     color: #050564;
 }
 
 .language-c .kt {
     color: #0a5ada;
+}
+
+.language-c .c1 {
+    color: #00742d;
 }
 
 .language-console {
